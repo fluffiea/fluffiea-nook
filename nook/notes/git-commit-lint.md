@@ -46,7 +46,9 @@ npm husky init
 
 ## 创建 commit-msg
 创建文件：`.husky/commit-msg`
+
 文件内容：
+
 ```bash
 npx commitlint --edit $1
 ```
@@ -55,12 +57,16 @@ npx commitlint --edit $1
 
 ## 创建 commitlint 配置
 创建文件：`commitlint.config.js`
+
 文件内容：
+
+-   CommonJS
+
 ```js
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
-    'type-enum': [2, 'always', ['feat', 'fix', 'docs', 'style', 'refactor', 'test', 'chore', 'revert']],
+    'type-enum': [2, 'always', ['feat', 'fix', 'docs', 'style', 'refactor', 'perf', 'test', 'build', 'ci', 'chore', 'revert']],
     'type-case': [2, 'always', 'lower-case'],
     'type-empty': [2, 'never'],
     'subject-empty': [2, 'never']
@@ -68,7 +74,24 @@ module.exports = {
 };
 ```
 
+-   ES Modules
+
+```js
+export default {
+  extends: ['@commitlint/config-conventional'],
+  rules: {
+    'type-enum': [2, 'always', ['feat', 'fix', 'docs', 'style', 'refactor', 'perf', 'test', 'build', 'ci', 'chore', 'revert']],
+    'type-case': [2, 'always', 'lower-case'],
+    'type-empty': [2, 'never'],
+    'subject-empty': [2, 'never']
+  }
+};
+```
+
+
+
 ## 替换 git 提交 commit
+
 - 不规范的提交会失败
 - `npm run commit` 可以使用交互式提交
 - `npm run cm` 可以执行 `git add .` 和 `npm run commit` 两个命令
