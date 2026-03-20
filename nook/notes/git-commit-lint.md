@@ -14,9 +14,20 @@ npm init
 ```
 
 ## 安装依赖
+
+:::tabs
+
+== npm
 ```bash
 npm install --save-dev commitizen cz-conventional-changelog @commitlint/cli @commitlint/config-conventional husky
 ```
+
+== pnpm
+```bash
+pnpm add --save-dev commitizen cz-conventional-changelog @commitlint/cli @commitlint/config-conventional husky
+```
+:::
+
 
 ## 在 package.json 中添加配置
 ```json
@@ -60,8 +71,9 @@ npx commitlint --edit $1
 
 文件内容：
 
--   CommonJS
+:::tabs
 
+== CommonJS
 ```js
 module.exports = {
   extends: ['@commitlint/config-conventional'],
@@ -74,8 +86,7 @@ module.exports = {
 };
 ```
 
--   ES Modules
-
+== ES Modules
 ```js
 export default {
   extends: ['@commitlint/config-conventional'],
@@ -88,6 +99,7 @@ export default {
 };
 ```
 
+:::
 
 
 ## 替换 git 提交 commit
