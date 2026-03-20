@@ -21,6 +21,7 @@ export default defineConfig({
           text: 'Notes',
           items: [
             { text: 'Git 提交规范配置指南', link: '/notes/git-commit-lint'},
+            { text: '一些工具的使用记录', link: '/notes/tools-use'},
           ],
         },
       ],
