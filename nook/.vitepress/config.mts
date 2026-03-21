@@ -6,7 +6,14 @@ export default defineConfig({
   base: '/fluffiea-nook/',
   title: "Fluffiea Nook",
   description: "A nook for Fluffiea",
+  head: [['link', { rel: 'icon', href: '/fluffiea-nook/logo.svg' }]],
   themeConfig: {
+    // 网站 Logo
+    logo: '/logo.svg',
+
+    // 站点标题
+    siteTitle: 'Fluffiea Nook',
+
     // 导航栏
     nav: [
       { text: 'Home', link: '/' },
@@ -19,6 +26,7 @@ export default defineConfig({
       '/notes/': [
         {
           text: 'Notes',
+          collapsed: false,
           items: [
             { text: 'Git 提交规范配置指南', link: '/notes/git-commit-lint'},
             { text: '一些工具的使用记录', link: '/notes/tools-use'},
