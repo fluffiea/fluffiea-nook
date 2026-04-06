@@ -21,19 +21,26 @@ export default defineConfig({
     ],
 
     // 侧边栏
-    sidebar: {
-      // 笔记界面
-      '/notes/': [
-        {
-          text: 'Notes',
-          collapsed: false,
-          items: [
-            { text: 'Git 提交规范配置指南', link: '/notes/git-commit-lint'},
-            { text: '一些工具的使用记录', link: '/notes/tools-use'},
-          ],
-        },
-      ],
-    },
+    sidebar: [
+      {
+        text: '笔记',
+        collapsed: false,
+        link: '/notes',
+        items: [
+          { text: 'Git 提交规范配置指南', link: '/notes/git-commit-lint'},
+        ],
+      },
+      {
+        text: '工具使用',
+        collapsed: false,
+        link: '/tools',
+        items: [
+          { text: 'scoop', link: '/tools/scoop' },
+          { text: 'nvm', link: '/tools/nvm' },
+          { text: 'uv', link: '/tools/uv' },
+        ],
+      },
+    ],
 
     // 搜索
     search: {
