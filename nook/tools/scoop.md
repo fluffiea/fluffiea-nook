@@ -9,7 +9,7 @@
 ```bash
 # 设置一个用户级别的环境变量
 # 这里是为了让 scoop 和 使用 scoop 安装的软件都下载到我们指定的路径之中
-$env:SCOOP = 'D:\Scoop'
+$env:SCOOP = 'D:\scoop'
 [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
 
 # 允许 powershell 执行脚本文件
@@ -60,7 +60,7 @@ scoop bucket add <bucket> <url>
 # 如果你要修改镜像的仓库已经存在了，则需要先删除再重新添加
 scoop bucket list # 查看当前的仓库
 scoop bucket rm <bucket> # 删除仓库
-scoop bucket add <bucket> <url> 修改镜像
+scoop bucket add <bucket> <url> # 修改镜像
 # 这里列举我使用的镜像
 # main: https://gitee.com/scoop-installer/Main
 # extras: https://gitee.com/scoop-installer/Extras

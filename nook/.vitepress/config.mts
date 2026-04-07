@@ -28,6 +28,8 @@ export default defineConfig({
         link: '/notes',
         items: [
           { text: 'Git 提交规范配置指南', link: '/notes/git-commit-lint'},
+          { text: 'husky', link: '/notes/husky' },
+          { text: 'lint-staged', link: '/notes/lint-staged' },
         ],
       },
       {
