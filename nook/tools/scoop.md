@@ -71,6 +71,64 @@ scoop bucket add <bucket> <url> # 修改镜像
 scoop update
 ```
 
+国内可以直接使用 `scoop-cn` 来加速所有的官方 `bucket`, `scoop-cn` 是 `scoop` 官方包的整合包，且每日同步数据，对于国内网络比较友好
+
+```bash
+# 将其作为 bucket
+scoop bucket add scoop-cn https://gh-proxy.com/https://github.com/duzyn/scoop-cn.git
+# 安装的时候可以加上 scoop-cn 前缀准确安装，比如
+scoop install scoop-cn/<pkg>
+
+# 因为这个 bucket 包括了官方维护的 bucket, 所以可以删除之前配置的 bucket，然后将这个添加为 main
+scoop bucket rm main
+scoop bucket rm extras
+scoop bucket rm versions
+scoop bucket rm java
+...
+# 将 scoop-cn 添加为 main
+scoop bucket add main https://gh-proxy.com/https://github.com/duzyn/scoop-cn.git
+```
+
+## 加速工具
+
+可以安装 `scoop-search` 加速 `scoop search` 命令
+
+```bash
+# 安装 scoop-search
+scoop install scoop-search
+
+# 使用
+scoop-search <pkg>
+```
+
+想要使用 `scoop-search` 无痛替换 `scoop search` 的话，我们需要修改一个配置文件
+
+一、修改配置文件
+
+```bash
+notepad $PROFILE
+```
+
+二、把文件里的内容替换成下面的内容
+
+```bash
+# 让 scoop-search 接管 scoop search 命令
+Set-Alias -Name scoop-search-orig -Value scoop-search.exe -Option AllScope
+function scoop { if ($args[0] -eq "search") { scoop-search-orig @($args | Select-Object -Skip 1) } else { scoop.ps1 @args } }
+```
+
+保存之后关闭文件，就可以在 `powershell` 中正常使用 `scoop search` 了，此时搜索使用的是 `scoop-search`
+
+```bash
+scoop search <pkg>
+# 就相当于
+scoop-search <pkg>
+```
+
+::: info
+这里设置的无痛替换，仅仅针对 `powershell`，在 `cmd` 中并不生效
+:::
+
 ## 常用命令
 
 ```bash
