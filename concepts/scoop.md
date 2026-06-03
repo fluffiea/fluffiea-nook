@@ -114,15 +114,15 @@ function scoop { if ($args[0] -eq "search") { scoop-search-orig @($args | Select
 ## 常用命令
 
 ```bash
-scoop search <pkg>       # 搜索应用
-scoop install <pkg>      # 安装应用
-scoop uninstall <pkg>    # 卸载应用
-scoop update             # 更新 scoop 目录
-scoop update <pkg>       # 更新应用
-scoop update *           # 更新所有应用
-scoop bucket list        # 查看添加的仓库
-scoop bucket known       # 列出官方已知仓库
-scoop bucket add <b>     # 添加仓库
-scoop bucket add <b> <url>  # 添加指定镜像的仓库
-scoop bucket rm <b>      # 删除仓库
+scoop search <pkg>           # 搜索应用
+scoop install <pkg>          # 安装应用
+scoop uninstall <pkg>        # 卸载应用
+scoop update                 # 更新 scoop 目录
+scoop update <pkg>           # 更新应用
+scoop update *               # 更新所有应用
+scoop bucket list            # 查看添加的仓库
+scoop bucket known           # 列出官方已知仓库
+scoop bucket add <b>         # 添加仓库
+scoop bucket add <b> <url>   # 添加指定镜像的仓库
+scoop bucket rm <b>          # 删除仓库
 ```

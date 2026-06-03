@@ -15,14 +15,14 @@ tags: [linux, guide]
 ## 一、文件与目录操作
 
 ```bash
-ls                    # list — 列出当前目录的文件
-ls -la                # list all — 列出所有文件（含隐藏文件）及详细信息
-cd <dir>             # change directory — 切换目录
-cd ..                 # 返回上级目录
-mkdir -p <path>       # make directory — 创建目录（-p 父目录不存在时自动创建）
-cp -r <src> <dest>    # copy — 复制文件/文件夹（-r recursive 递归复制整个目录）
-rm -rf <path>         # remove — 删除文件/文件夹（-r 递归 -f 强制）
-cat <file>            # concatenate — 查看文件全部内容
+ls                       # list — 列出当前目录的文件
+ls -la                   # list all — 列出所有文件（含隐藏文件）及详细信息
+cd <dir>                 # change directory — 切换目录
+cd ..                    # 返回上级目录
+mkdir -p <path>          # make directory — 创建目录（-p 父目录不存在时自动创建）
+cp -r <src> <dest>       # copy — 复制文件/文件夹（-r recursive 递归复制整个目录）
+rm -rf <path>            # remove — 删除文件/文件夹（-r 递归 -f 强制）
+cat <file>               # concatenate — 查看文件全部内容
 ```
 
 ---
@@ -30,16 +30,16 @@ cat <file>            # concatenate — 查看文件全部内容
 ## 二、查看系统信息
 
 ```bash
-df -h                 # disk free — 查看磁盘使用情况（-h human-readable 人性化显示）
-lsblk                 # list block devices — 列出所有硬盘和分区
-free -h               # free memory — 查看内存使用
-ps aux                # process status — 查看所有进程
-top                   # table of processes — 实时进程监控（按 q 退出）
-htop                  # top 的美化增强版（需安装）
-uname -a              # unix name — 查看系统内核版本信息
-hostname -I           # 查看本机 IP 地址
-ip a                  # IP address — 查看网络配置和 IP
-ping <host>           # 测试网络连通性
+df -h                    # disk free — 查看磁盘使用情况（-h human-readable 人性化显示）
+lsblk                    # list block devices — 列出所有硬盘和分区
+free -h                  # free memory — 查看内存使用
+ps aux                   # process status — 查看所有进程
+top                      # table of processes — 实时进程监控（按 q 退出）
+htop                     # top 的美化增强版（需安装）
+uname -a                 # unix name — 查看系统内核版本信息
+hostname -I              # 查看本机 IP 地址
+ip a                     # IP address — 查看网络配置和 IP
+ping <host>              # 测试网络连通性
 ```
 
 ## 搜索文本
@@ -72,7 +72,7 @@ sudo sgdisk -n 0:0:0 -t 0:8e00 /dev/sda
 sudo partprobe /dev/sda
 
 # 挂载/卸载设备
-sudo mount /dev/sdb1 /mnt/usb       # mount — 把设备挂到目录上
+sudo mount /dev/sdb1 /mnt/usb        # mount — 把设备挂到目录上
 sudo umount /mnt/usb                 # umount — 卸载设备（安全拔出前必须执行）
 ```
 
@@ -107,10 +107,10 @@ sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
 ## 六、系统服务管理
 
 ```bash
-sudo systemctl restart <service>     # 重启服务
-sudo systemctl start <service>        # 启动服务
-sudo systemctl stop <service>         # 停止服务
-sudo systemctl status <service>       # 查看服务状态
+sudo systemctl restart <service>         # 重启服务
+sudo systemctl start <service>           # 启动服务
+sudo systemctl stop <service>            # 停止服务
+sudo systemctl status <service>          # 查看服务状态
 ```
 
 ---
@@ -137,7 +137,7 @@ sudo sed -i 's|#HandleLidSwitch=suspend|HandleLidSwitch=ignore|' /etc/systemd/lo
 sudo docker compose pull
 
 # 启动容器
-sudo docker compose up -d          # -d = detach 后台运行
+sudo docker compose up -d            # -d = detach 后台运行
 
 # 查看容器状态
 sudo docker compose ps
@@ -157,11 +157,11 @@ sudo docker compose restart
 ## 九、包管理器（apt）
 
 ```bash
-sudo apt update                    # 更新软件源列表
-sudo apt install <pkg>            # 安装软件
-sudo apt remove <pkg>             # 卸载软件
-sudo apt purge <pkg>              # 彻底卸载（含配置文件）
-sudo apt autoremove                # 自动清理无用的依赖包
+sudo apt update                      # 更新软件源列表
+sudo apt install <pkg>               # 安装软件
+sudo apt remove <pkg>                # 卸载软件
+sudo apt purge <pkg>                 # 彻底卸载（含配置文件）
+sudo apt autoremove                  # 自动清理无用的依赖包
 ```
 
 ---
@@ -169,15 +169,15 @@ sudo apt autoremove                # 自动清理无用的依赖包
 ## 十、权限相关
 
 ```bash
-sudo <command>                        # superuser do — 以 root 权限执行
-sudo -i                            # 切换到 root 用户
+sudo <command>                           # superuser do — 以 root 权限执行
+sudo -i                                  # 切换到 root 用户
 
 # 修改文件权限
-chmod +x <file>                    # change mode — 给文件添加可执行权限
-chmod 755 <file>                   # rwxr-xr-x 所有者可读写执行，其他人可读执行
+chmod +x <file>                          # change mode — 给文件添加可执行权限
+chmod 755 <file>                         # rwxr-xr-x 所有者可读写执行，其他人可读执行
 
 # 修改文件所有者
-sudo chown <user>:<group> <file>      # change owner
+sudo chown <user>:<group> <file>         # change owner
 ```
 
 ---

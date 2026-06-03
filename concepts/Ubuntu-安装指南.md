@@ -108,7 +108,7 @@ TOSHIBA 512GB 的分配方案：
 
 ### 4.1 先看看磁盘情况
 ```bash
-lsblk                         # list block devices，列出所有硬盘和分区
+lsblk                            # list block devices，列出所有硬盘和分区
 ```
 
 ```
@@ -130,7 +130,7 @@ sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
 
 验证：
 ```bash
-df -h                         # disk free - human readable，查看磁盘使用情况
+df -h                            # disk free - human readable，查看磁盘使用情况
 ```
 应该显示 `/` 从 98G → 466G
 
@@ -155,7 +155,7 @@ sudo sgdisk -n 0:0:0 -t 0:8e00 /dev/sda
 #   -n = new partition, 0:0:0 表示用全部可用空间
 #   -t = type, 8e00 是 LVM 的分区类型代码
 
-sudo partprobe /dev/sda        # 通知内核重读分区表（让系统知道分区变了）
+sudo partprobe /dev/sda          # 通知内核重读分区表（让系统知道分区变了）
 ```
 
 ### 5.3 加入 LVM 组
@@ -276,11 +276,11 @@ sudo docker compose up -d
 
 ### 8.4 Docker 常用管理命令
 ```bash
-sudo docker compose ps        # 查看所有容器状态（是否在运行）
-sudo docker compose logs      # 查看日志（排查问题）
-sudo docker compose down      # 停止并删除所有容器
-sudo docker compose restart   # 重启所有容器
-sudo docker compose pull      # 拉取最新镜像
+sudo docker compose ps           # 查看所有容器状态（是否在运行）
+sudo docker compose logs         # 查看日志（排查问题）
+sudo docker compose down         # 停止并删除所有容器
+sudo docker compose restart      # 重启所有容器
+sudo docker compose pull         # 拉取最新镜像
 ```
 
 ---
