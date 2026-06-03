@@ -91,12 +91,16 @@ sudo umount /mnt/usb                 # umount — 卸载设备（安全拔出前
 ```bash
 # 创建物理卷（告诉 LVM 某块分区可以用来存数据）
 sudo pvcreate /dev/sda1
+#    pv = physical volume
 
 # 扩展卷组（把物理卷加入 LVM 池子）
 sudo vgextend ubuntu-vg /dev/sda1
+#    vg = volume group
 
 # 扩展逻辑卷（把池子里的空间分给根目录）
 sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+#    lv = logical volume
+#    -l +100%FREE = 把所有剩余空间都加上
 
 # 调整文件系统大小（让系统知道空间变大了）
 sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
@@ -123,6 +127,12 @@ sudo systemctl status <service>       # 查看服务状态
 ```bash
 # 替换文件中的文本
 sudo sed -i 's|<old>|<new>|' <file>
+#    s = substitute 替换
+#    -i = in-place 直接修改文件
+#    | 是分隔符（也可以用 /）
+
+# 示例：把注释掉的配置改为生效
+sudo sed -i 's|#HandleLidSwitch=suspend|HandleLidSwitch=ignore|' /etc/systemd/logind.conf
 ```
 
 ---
@@ -158,9 +168,11 @@ sudo apt autoremove                # 自动清理无用的依赖包
 sudo <command>                       # superuser do — 以 root 权限执行
 sudo -i                            # 切换到 root 用户
 
+# 修改文件权限
 chmod +x <file>                    # change mode — 给文件添加可执行权限
 chmod 755 <file>                   # rwxr-xr-x 所有者可读写执行，其他人可读执行
 
+# 修改文件所有者
 sudo chown <user>:<group> <file>     # change owner
 ```
 

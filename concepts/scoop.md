@@ -42,7 +42,11 @@ scoop config SCOOP_REPO <url>
 scoop update
 ```
 
-如果环境中没有 git，会提示安装：
+如果环境中没有 git，此时会提示：
+```
+Scoop uses Git to update itself. Run 'scoop install git' and try again
+```
+按提示安装 git，再重新 `scoop update` 即可：
 
 ```bash
 scoop install git
@@ -80,13 +84,6 @@ scoop bucket add main https://gh-proxy.com/https://github.com/duzyn/scoop-cn.git
 > [!tip] scoop-cn 是什么？
 > 官方包的国内整合版，每日同步数据，对国内网络比较友好。
 
-## 🔗 相关工具
-
-scoop 可以配合其他版本管理工具一起使用：
-
-- [[nvm]] — 通过 scoop 安装 Node.js 版本管理
-- [[uv]] — 通过 scoop 安装 Python 项目管理
-
 ## ⚡ 加速搜索
 
 安装 `scoop-search` 加速搜索命令：
@@ -95,7 +92,13 @@ scoop 可以配合其他版本管理工具一起使用：
 scoop install scoop-search
 ```
 
-无痛替换 `scoop search`（仅 PowerShell 生效）：
+单独使用：
+
+```bash
+scoop-search <pkg>
+```
+
+**无痛替换 `scoop search`：**
 
 编辑 PowerShell 配置文件：
 
@@ -111,6 +114,9 @@ function scoop { if ($args[0] -eq "search") { scoop-search-orig @($args | Select
 ```
 
 保存后关闭，之后 `scoop search <pkg>` 自动使用 `scoop-search`。
+
+> [!warning] 适用条件
+> 此方案仅针对 **PowerShell** 生效，在 `cmd` 中并不适用。
 
 ## ⚙️ 常用命令
 

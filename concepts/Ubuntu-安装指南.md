@@ -264,8 +264,11 @@ sudo umount /mnt/usb
 
 ```bash
 cd /opt/immich
+#  (change directory)  进入 Immich 目录
 
 sudo docker compose up -d
+#  docker compose = 按配置文件启动多个容器
+#  up = 启动，-d = detach（后台运行，不占用终端）
 ```
 
 ### 访问
