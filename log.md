@@ -1,29 +1,16 @@
 # Wiki Log
 
 > 按时间顺序记录所有 Wiki 操作。仅追加。
-> 格式：`## [YYYY-MM-DD] 操作 | 主题`
 
-## [2025-06-03] create | linux
-- 新增：[[linux]] — 从安装实践中提取的 Linux 命令分类汇总
+## 2025-06-03
 
-## [2025-06-03] ingest | Ubuntu-安装指南
-- 新增：[[Ubuntu-安装指南]] — 小米笔记本 Linux 安装踩坑文档
+### create
+- [[linux]] — 从安装实践中提取的 Linux 命令分类汇总
+- [[Ubuntu-安装指南]] — 小米笔记本 Linux 安装踩坑文档
+- Wiki 初始化：SCHEMA.md、index.md、log.md，迁移 6 篇笔记至 concepts/
+- 修复 uv.md 安装命令错误
 
-## [2025-06-03] create | Wiki 初始化
-- 从 VitePress 笔记站重构为 LLM-Wiki 格式
-- 删除：package.json, pnpm-lock.yaml, commitlint, husky, CI/CD, VitePress 配置
-- 创建：SCHEMA.md, index.md, log.md
-- 迁移：6 篇笔记迁移至 concepts/
-- 修复：uv.md 中的安装命令错误
-
-## [2025-06-03] create | CPU-架构选型
-- 新增：[[CPU-架构选型]] — x86_64 / amd64 / arm64 区别及下载选型指南
-
-## [2025-06-03] create | Linux-目录规范
-- 新增：[[Linux-目录规范]] — /opt、/srv、/var 等目录的用途规范
-
-## [2025-06-03] restructure | 结构调整
-- `comparisons/` 目录激活，已写入 SCHEMA.md
-- `concepts/CPU-架构选型.md` → `comparisons/CPU-架构对比.md`（更合适放在对比目录）
-- `concepts/Linux-目录规范.md` → 合并进 `linux.md`（扩展「小知识：Linux 目录结构」章节）
-- 删除独立的 `Linux-目录规范.md` 文件
+### restructure
+- `comparisons/` 目录激活，写入 SCHEMA.md
+- `CPU-架构选型` → `comparisons/CPU-架构对比`（更适合放在对比目录）
+- `Linux-目录规范` 合并入 `linux.md`（扩展目录结构章节），删除单独文件
