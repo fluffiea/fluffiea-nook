@@ -9,6 +9,10 @@
 - [[husky]] — Git hooks 管理工具
 - [[lint-staged]] — 暂存区代码检查工具
 
+## 安装指南
+
+- [[Ubuntu-安装指南]] — 小米笔记本 Ubuntu 安装全记录，含踩坑汇总
+
 ## 包管理与版本管理
 
 - [[scoop]] — Windows 用户级包管理器
