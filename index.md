@@ -1,10 +1,11 @@
 # Wiki Index
 
 > 内容目录。每篇笔记以一行摘要列出。
-> 最后更新：2025-06-03 | 总篇数：8
+> 最后更新：2026-06-03 | 总篇数：9
 
 ## 🛠 开发工具
 
+- [[frp]] — 内网穿透工具：frps + frpc 配置、systemd 服务、端口管理
 - [[Git-提交规范]] — Git 提交规范配置指南：Commitizen + Commitlint + Husky
 - [[husky]] — Git hooks 管理工具
 - [[lint-staged]] — 暂存区代码检查工具
