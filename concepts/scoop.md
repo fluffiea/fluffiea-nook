@@ -6,15 +6,15 @@ type: concept
 tags: [windows, package-manager]
 ---
 
-# Scoop
+# 🍦 Scoop
 
 `scoop` 是一个 Windows 用户级别的软件安装工具，几乎不会破坏系统环境。
 
-## 安装
+## 📥 安装
 
 以管理员身份打开 PowerShell：
 
-```bash
+```powershell
 # 设置用户级别的环境变量（指定安装路径）
 $env:SCOOP = 'D:\scoop'
 [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
@@ -25,20 +25,20 @@ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 以**非管理员**身份打开 PowerShell 安装 scoop：
 
-```bash
-# 非管理员安装是因为 scoop 本身设计就是用户级别的
+```powershell
+# scoop 本身设计就是用户级别的，管理员身份安装会报错
 irm get.scoop.sh | iex
 ```
 
-## 更换镜像
+## 🔄 更换镜像
 
 scoop 可以更换镜像来提升国内下载速度。
 
-**更换主程序镜像**（加速 scoop 本身的更新和安装脚本拉取）：
+**更换主程序镜像**（加速 scoop 本身更新）：
 
 ```bash
 scoop config SCOOP_REPO <url>
-# 举例：https://gitee.com/scoop-installer/scoop
+# 例如：https://gitee.com/scoop-installer/scoop
 scoop update
 ```
 
@@ -48,15 +48,14 @@ scoop update
 scoop install git
 ```
 
-**更换软件仓库镜像**（加速软件包的下载更新）：
+**更换软件仓库镜像**（加速软件包下载）：
 
 ```bash
-# 先删除已存在的仓库再重新添加
 scoop bucket list
 scoop bucket rm <bucket>
 scoop bucket add <bucket> <url>
 
-# 常用镜像地址：
+# 常用镜像：
 # main:     https://gitee.com/scoop-installer/Main
 # extras:   https://gitee.com/scoop-installer/Extras
 # versions: https://gitee.com/scoop-installer/Versions
@@ -66,8 +65,6 @@ scoop update
 ```
 
 **使用 scoop-cn 一站式加速：**
-
-`scoop-cn` 是官方包的整合包，每日同步数据，对国内网络友好。
 
 ```bash
 scoop bucket add scoop-cn https://gh-proxy.com/https://github.com/duzyn/scoop-cn.git
@@ -80,15 +77,19 @@ scoop bucket rm main
 scoop bucket add main https://gh-proxy.com/https://github.com/duzyn/scoop-cn.git
 ```
 
-## 相关工具
+> [!tip] scoop-cn 是什么？
+> 官方包的国内整合版，每日同步数据，对国内网络比较友好。
+
+## 🔗 相关工具
 
 scoop 可以配合其他版本管理工具一起使用：
-- [[nvm]] — 通过 scoop 安装 Node.js 版本管理工具
-- [[uv]] — 通过 scoop 安装 Python 项目管理工具
 
-## 加速搜索
+- [[nvm]] — 通过 scoop 安装 Node.js 版本管理
+- [[uv]] — 通过 scoop 安装 Python 项目管理
 
-安装 `scoop-search` 加速 `scoop search` 命令：
+## ⚡ 加速搜索
+
+安装 `scoop-search` 加速搜索命令：
 
 ```bash
 scoop install scoop-search
@@ -111,7 +112,7 @@ function scoop { if ($args[0] -eq "search") { scoop-search-orig @($args | Select
 
 保存后关闭，之后 `scoop search <pkg>` 自动使用 `scoop-search`。
 
-## 常用命令
+## ⚙️ 常用命令
 
 ```bash
 scoop search <pkg>            # 搜索应用

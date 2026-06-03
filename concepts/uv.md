@@ -6,11 +6,14 @@ type: concept
 tags: [python, package-manager, version-manager]
 ---
 
-# UV
+# 🐍 UV
 
 `uv` 是一个 Python 包与项目管理工具，由 Rust 编写，速度极快。
 
-## 安装
+> [!tip] 为什么用 uv？
+> 传统 `pip` + `venv` 的速度比较慢，uv 用 Rust 重写后快 10~100 倍，且完全兼容 pip 的生态。
+
+## 📥 安装
 
 ```bash
 # Windows 上使用 scoop 安装
@@ -22,7 +25,7 @@ brew install uv
 
 也可通过 [[scoop]] 一键安装。
 
-## 常用命令
+## ⚙️ 常用命令
 
 ```bash
 uv --version                     # 查看 uv 版本
@@ -34,7 +37,7 @@ uv init <name>                   # 创建指定名称的项目目录并初始化
 uv add <pkg>                     # 添加依赖包
 uv add --dev <pkg>               # 添加开发依赖
 uv remove <pkg>                  # 移除依赖包
-uv sync                          # 同步安装所有依赖（根据 pyproject.toml + uv.lock）
+uv sync                          # 同步安装所有依赖
 uv lock                          # 生成/更新 uv.lock 锁文件
 
 uv venv                          # 创建虚拟环境

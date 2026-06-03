@@ -6,13 +6,13 @@ type: concept
 tags: [git, git-hooks]
 ---
 
-# Lint-Staged
+# ✨ Lint-Staged
 
-`lint-staged` 只针对暂存区的修改运行检查或格式化任务的工具，无需对整个项目进行检查，大大提升效率。
+`lint-staged` 只针对 Git 暂存区的修改运行检查或格式化任务，无需对整个项目检查，大大提升效率。
 
 需要搭配 [[husky]] 中的钩子来执行。
 
-## 安装
+## 📥 安装
 
 **npm：**
 ```bash

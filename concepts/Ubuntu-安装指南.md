@@ -6,7 +6,7 @@ type: concept
 tags: [linux, ubuntu, guide]
 ---
 
-# 小米笔记本 Air 13.3 Ubuntu 安装全记录
+# 🐧 小米笔记本 Air 13.3 Ubuntu 安装全记录
 
 > **机型：** 小米 Air 13.3（i7-8550U, 8GB 内存）
 > **硬盘：** TOSHIBA 512GB (NVMe) + Lenovo 128GB (SATA)
@@ -15,32 +15,32 @@ tags: [linux, ubuntu, guide]
 
 ---
 
-## 一、BIOS 设置
+## 🔧 一、BIOS 设置
 
-### 1.1 进 BIOS
+### 进 BIOS
 - 开机按 **F2** 进入 BIOS
 
-### 1.2 关闭 SecureBoot
+### 关闭 SecureBoot
 1. 切换到 **Security** 选项卡
 2. **Set Supervisor Password** → 设为 `123456`
    > 小米笔记本必须设密码后才能修改安全设置
 3. **Secure Boot Mode** → 设为 **Disabled**
 4. **F10** 保存退出（必须用 F10 保存，不是直接 Esc）
 
-### 1.3 其他 BIOS 要点
+### 其他 BIOS 要点
 - 启动模式：**UEFI Only**（不能切 Legacy）
 - **左 USB 口**才能启动，右口不行（硬件限制）
 - 合盖不息屏：安装完系统后配置（见第七节）
 
 ---
 
-## 二、制作启动 U 盘
+## 💿 二、制作启动 U 盘
 
-### 2.1 工具推荐
+### 工具推荐
 - **Rufus**（推荐，比 Ventoy 稳定）
 - 下载地址：https://rufus.ie/
 
-### 2.2 Rufus 设置
+### Rufus 设置
 | 项目 | 选择 | 说明 |
 |:---|:------|:-----|
 | 设备 | U 盘 | 你要写到的那个 U 盘 |
@@ -49,22 +49,23 @@ tags: [linux, ubuntu, guide]
 | 目标系统 | **UEFI (非 CSM)** | 跟 BIOS 的启动模式保持一致 |
 | 文件系统 | FAT32 | UEFI 只认识 FAT32 |
 
-> ⚠️ **Ventoy 踩坑记录：** 之前用 Ventoy 成功进了安装界面一次，重启后 U 盘再也不被 BIOS 识别。换 Rufus 直接写 ISO 后一次成功。推测是杂牌 U 盘兼容性问题。
+> [!warning] Ventoy 踩坑记录
+> 之前用 Ventoy 成功进了安装界面一次，重启后 U 盘再也不被 BIOS 识别。换 Rufus 直接写 ISO 后一次成功。推测是杂牌 U 盘兼容性问题。
 
-### 2.3 ISO 下载
+### ISO 下载
 - 官方下载：https://ubuntu.com/download/server
 - 选 Ubuntu Server 24.04 LTS（长期支持版）
 
 ---
 
-## 三、安装 Ubuntu Server
+## 🚀 三、安装 Ubuntu Server
 
-### 3.1 启动安装
+### 启动安装
 1. U 盘插 **左 USB 口**
 2. 开机 → 自动从 U 盘启动
 3. 出现 GRUB 菜单后选 **Try or Install Ubuntu Server**（第一项）
 
-### 3.2 安装步骤详解
+### 安装步骤详解
 
 | 步骤 | 操作 | 说明 |
 |:---|:------|:-----|
@@ -95,14 +96,14 @@ TOSHIBA 512GB 的分配方案：
 - **Set up as LVM group** → 启用逻辑卷管理，方便以后扩缩分区
 - **不加密** → 笔记本没必要，徒增麻烦
 
-### 3.3 安装完成
+### 安装完成
 - 进度跑完后选 **Reboot Now**
 - **屏幕变黑后立即拔出 U 盘**（不然又从 U 盘启动）
 - 重启后看到 `fluffiea-home login:` 就成功了
 
 ---
 
-## 四、扩容根目录（LVM）
+## 📏 四、扩容根目录（LVM）
 
 安装时只分了 100G 给 `/`，剩下的 373G 还在 LVM 池子里没分配。
 
@@ -136,7 +137,7 @@ df -h    # disk free - human readable，查看磁盘使用情况
 
 ---
 
-## 五、合并第二块硬盘到 LVM
+## 🔗 五、合并第二块硬盘到 LVM
 
 Lenovo 128GB 之前是 Windows 盘，清掉后加入 LVM 合并使用。
 
@@ -179,9 +180,9 @@ sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
 
 ---
 
-## 六、安装 Docker
+## 🐳 六、安装 Docker
 
-### 6.1 一键安装
+### 一键安装
 ```bash
 curl -fsSL https://get.docker.com | sudo sh -s -- --mirror Aliyun
 ```
@@ -191,7 +192,7 @@ curl -fsSL https://get.docker.com | sudo sh -s -- --mirror Aliyun
 - `sudo sh` = 用 root 权限执行脚本
 - `--mirror Aliyun` = 从阿里云镜像下载（在国内不用这个会很慢）
 
-### 6.2 让你不用 sudo 也能用 Docker
+### 不用 sudo 也能用 Docker
 ```bash
 sudo usermod -aG docker $USER
 #  (user modify)  修改用户
@@ -199,14 +200,14 @@ sudo usermod -aG docker $USER
 #  这样以后 docker 命令不用加 sudo 了（需要重新登录生效）
 ```
 
-### 6.3 Docker 是什么？
+### Docker 是什么？
 Docker 就像个**轻量级虚拟机**，但比虚拟机快得多：
 - 你把应用（比如 Immich）打包成一个「镜像」
 - Docker 运行这个镜像就成了一个「容器」
 - 容器之间互相隔离，互不影响
 - 一句话：**装软件再也不怕依赖冲突，拉个镜像就跑**
 
-### 6.4 国内拉 ghcr.io 镜像加速
+### 国内拉 ghcr.io 镜像加速
 Immich 的镜像存在 GitHub 的容器仓库 `ghcr.io`，国内访问很慢。用南京大学的镜像站代替：
 ```bash
 sudo sed -i "s/ghcr.io\/immich-app/ghcr.nju.edu.cn\/immich-app/g" docker-compose.yml
@@ -217,16 +218,16 @@ sudo sed -i "s/ghcr.io\/immich-app/ghcr.nju.edu.cn\/immich-app/g" docker-compose
 
 ---
 
-## 七、合盖设置（合盖不关机）
+## 💤 七、合盖设置（合盖不关机）
 
-### 7.1 查看当前设置
+### 查看当前设置
 ```bash
 cat /etc/systemd/logind.conf | grep -i "handlelid"
 #  (concatenate)  查看文件内容
 #  grep = 搜索文本，-i = 忽略大小写
 ```
 
-### 7.2 修改为合盖不做任何操作
+### 修改为合盖不做任何操作
 ```bash
 sudo sed -i 's|#HandleLidSwitch=suspend|HandleLidSwitch=ignore|' /etc/systemd/logind.conf
 #  把注释掉的 #HandleLidSwitch=suspend 改成 HandleLidSwitch=ignore
@@ -237,9 +238,9 @@ sudo systemctl restart systemd-logind
 
 ---
 
-## 八、部署 Immich
+## 📸 八、部署 Immich
 
-### 8.1 从移动硬盘复制
+### 从移动硬盘复制
 ```bash
 # 1. 建一个空目录当"挂载点"
 sudo mkdir -p /mnt/usb
@@ -259,22 +260,20 @@ sudo umount /mnt/usb
 #  umount = 卸载，移除了才能安全拔出
 ```
 
-### 8.2 启动 Immich
+### 启动 Immich
+
 ```bash
 cd /opt/immich
-#  (change directory)  进入 Immich 目录
 
 sudo docker compose up -d
-#  docker compose = 按配置文件启动多个容器
-#  up = 启动，-d = detach（后台运行，不占用终端）
 ```
 
-### 8.3 访问
+### 访问
 浏览器打开：`http://192.168.205.17:2283`
 - 首次注册的用户自动成为管理员
 - 2283 是 Immich 的默认端口
 
-### 8.4 Docker 常用管理命令
+### Docker 常用管理命令
 ```bash
 sudo docker compose ps         # 查看所有容器状态（是否在运行）
 sudo docker compose logs       # 查看日志（排查问题）
@@ -285,11 +284,9 @@ sudo docker compose pull       # 拉取最新镜像
 
 ---
 
-学完这篇可以看看 [[linux]]，里面把命令按场景分类整理好了，方便复习查阅。
-
 ---
 
-## 九、常用 Linux 命令速查
+## 📋 九、Linux 命令速查
 
 | 命令 | 全称 | 作用 |
 |:---|:-----|:-----|
@@ -321,7 +318,11 @@ sudo docker compose pull       # 拉取最新镜像
 
 ---
 
-## 十、踩坑记录
+学完这篇可以看看 [[linux]]，里面把命令按场景分类整理好了，方便复习查阅。
+
+---
+
+## ⚠️ 十、踩坑记录
 
 | 坑 | 原因 | 解决办法 |
 |:---|:-----|:---------|

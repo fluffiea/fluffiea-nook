@@ -6,11 +6,11 @@ type: concept
 tags: [node, version-manager]
 ---
 
-# NVM
+# 📦 NVM
 
 `nvm` 是一个 Node.js 版本管理工具。
 
-## 安装
+## 📥 安装
 
 ```bash
 # Windows 上使用 scoop 安装
@@ -22,7 +22,7 @@ brew install nvm
 
 也可通过 [[scoop]] 一键安装。
 
-## 常用命令
+## ⚙️ 常用命令
 
 ```bash
 nvm --version                  # 查看 nvm 版本
