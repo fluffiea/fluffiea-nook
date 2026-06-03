@@ -80,6 +80,12 @@ scoop bucket rm main
 scoop bucket add main https://gh-proxy.com/https://github.com/duzyn/scoop-cn.git
 ```
 
+## 相关工具
+
+scoop 可以配合其他版本管理工具一起使用：
+- [[nvm]] — 通过 scoop 安装 Node.js 版本管理工具
+- [[uv]] — 通过 scoop 安装 Python 项目管理工具
+
 ## 加速搜索
 
 安装 `scoop-search` 加速 `scoop search` 命令：
