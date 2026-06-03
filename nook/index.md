@@ -1,25 +1,16 @@
----
-# https://vitepress.dev/reference/default-theme-home-page
-layout: home
+# Wiki Index
 
-hero:
-  name: "Fluffiea Nook"
-  text: "Fluffiea 的专属小角落"
-  tagline: 用于记录一下笔记或者小想法的地方
-  actions:
-    - theme: brand
-      text: Description
-      link: /description
-    - theme: alt
-      text: Notes
-      link: /notes/git-commit-lint
+> 内容目录。每篇笔记以一行摘要列出。
+> 最后更新：2025-06-03 | 总篇数：6
 
-# features:
-#   - title: Feature A
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature B
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-#   - title: Feature C
-#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
----
+## 开发工具
 
+- [[git-commit-lint]] — Git 提交规范配置指南：Commitizen + Commitlint + Husky
+- [[husky]] — Git hooks 管理工具
+- [[lint-staged]] — 暂存区代码检查工具
+
+## 包管理与版本管理
+
+- [[scoop]] — Windows 用户级包管理器
+- [[nvm]] — Node.js 版本管理工具
+- [[uv]] — Python 包与项目管理工具

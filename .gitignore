@@ -1,3 +1,4 @@
-nook/.vitepress/cache
-nook/.vitepress/dist
-node_modules
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+.DS_Store
