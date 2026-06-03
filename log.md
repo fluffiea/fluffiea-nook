@@ -15,3 +15,9 @@
 - 创建：SCHEMA.md, index.md, log.md
 - 迁移：6 篇笔记迁移至 concepts/
 - 修复：uv.md 中的安装命令错误
+
+## [2025-06-03] create | CPU-架构选型
+- 新增：[[CPU-架构选型]] — x86_64 / amd64 / arm64 区别及下载选型指南
+
+## [2025-06-03] create | Linux-目录规范
+- 新增：[[Linux-目录规范]] — /opt、/srv、/var 等目录的用途规范
