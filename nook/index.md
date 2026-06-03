@@ -5,7 +5,7 @@
 
 ## 开发工具
 
-- [[git-commit-lint]] — Git 提交规范配置指南：Commitizen + Commitlint + Husky
+- [[Git-提交规范]] — Git 提交规范配置指南：Commitizen + Commitlint + Husky
 - [[husky]] — Git hooks 管理工具
 - [[lint-staged]] — 暂存区代码检查工具
 

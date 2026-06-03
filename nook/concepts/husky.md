@@ -10,7 +10,7 @@ tags: [git, git-hooks]
 
 `husky` 是 `git` 提交钩子，用于在执行 `git` 操作的时候，自动化检查提交信息、检查代码、运行测试等。
 
-常与 [[lint-staged]] 搭配使用，也常用于 [[git-commit-lint]] 的校验流程。
+常与 [[lint-staged]] 搭配使用，也常用于 [[Git-提交规范]] 的校验流程。
 
 ## 安装
 
