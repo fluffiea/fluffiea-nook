@@ -2,3 +2,6 @@ node_modules/
 pnpm-lock.yaml
 package-lock.json
 .DS_Store
+
+# Obsidian 配置文件（个人偏好，不纳入版本控制）
+.obsidian/
