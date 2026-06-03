@@ -21,3 +21,9 @@
 
 ## [2025-06-03] create | Linux-目录规范
 - 新增：[[Linux-目录规范]] — /opt、/srv、/var 等目录的用途规范
+
+## [2025-06-03] restructure | 结构调整
+- `comparisons/` 目录激活，已写入 SCHEMA.md
+- `concepts/CPU-架构选型.md` → `comparisons/CPU-架构对比.md`（更合适放在对比目录）
+- `concepts/Linux-目录规范.md` → 合并进 `linux.md`（扩展「小知识：Linux 目录结构」章节）
+- 删除独立的 `Linux-目录规范.md` 文件
