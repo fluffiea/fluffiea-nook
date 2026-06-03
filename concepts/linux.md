@@ -39,10 +39,8 @@ htop                  # top 的美化增强版（需安装）
 uname -a              # unix name — 查看系统内核版本信息
 hostname -I           # 查看本机 IP 地址
 ip a                  # IP address — 查看网络配置和 IP
-ping <地址>           # 测试网络连通性
-```
-
 ping <host>           # 测试网络连通性
+```
 
 ## 搜索文本
 
