@@ -17,12 +17,12 @@ tags: [linux, guide]
 ```bash
 ls                    # list — 列出当前目录的文件
 ls -la                # list all — 列出所有文件（含隐藏文件）及详细信息
-cd <目录>             # change directory — 切换目录
+cd <dir>             # change directory — 切换目录
 cd ..                 # 返回上级目录
-mkdir -p <路径>       # make directory — 创建目录（-p 父目录不存在时自动创建）
-cp -r <源> <目标>     # copy — 复制文件/文件夹（-r recursive 递归复制整个目录）
-rm -rf <路径>         # remove — 删除文件/文件夹（-r 递归 -f 强制）
-cat <文件>            # concatenate — 查看文件全部内容
+mkdir -p <path>       # make directory — 创建目录（-p 父目录不存在时自动创建）
+cp -r <src> <dest>    # copy — 复制文件/文件夹（-r recursive 递归复制整个目录）
+rm -rf <path>         # remove — 删除文件/文件夹（-r 递归 -f 强制）
+cat <file>            # concatenate — 查看文件全部内容
 ```
 
 ---
@@ -42,14 +42,14 @@ ip a                  # IP address — 查看网络配置和 IP
 ping <地址>           # 测试网络连通性
 ```
 
----
+ping <host>           # 测试网络连通性
 
-## 三、搜索文本
+## 搜索文本
 
 ```bash
-grep <关键词> <文件>                # 在文件中搜索关键词
-grep -i <关键词> <文件>             # -i ignore case 忽略大小写
-cat <文件> | grep <关键词>          # 管道符，把 cat 的输出传给 grep 搜索
+grep <pattern> <file>                # 在文件中搜索关键词
+grep -i <pattern> <file>             # -i ignore case 忽略大小写
+cat <file> | grep <pattern>          # 管道符，把 cat 的输出传给 grep 搜索
 ```
 
 ---
@@ -109,10 +109,10 @@ sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
 ## 六、系统服务管理
 
 ```bash
-sudo systemctl restart <服务名>     # 重启服务
-sudo systemctl start <服务名>        # 启动服务
-sudo systemctl stop <服务名>         # 停止服务
-sudo systemctl status <服务名>       # 查看服务状态
+sudo systemctl restart <service>     # 重启服务
+sudo systemctl start <service>        # 启动服务
+sudo systemctl stop <service>         # 停止服务
+sudo systemctl status <service>       # 查看服务状态
 ```
 
 ---
@@ -121,7 +121,7 @@ sudo systemctl status <服务名>       # 查看服务状态
 
 ```bash
 # 替换文件中的文本
-sudo sed -i 's|旧文本|新文本|' <文件>
+sudo sed -i 's|<old>|<new>|' <file>
 #  s = substitute 替换
 #  -i = in-place 直接修改文件
 #  | 是分隔符（也可以用 /）
@@ -160,9 +160,9 @@ sudo docker compose restart
 
 ```bash
 sudo apt update                    # 更新软件源列表
-sudo apt install <包名>            # 安装软件
-sudo apt remove <包名>             # 卸载软件
-sudo apt purge <包名>              # 彻底卸载（含配置文件）
+sudo apt install <pkg>            # 安装软件
+sudo apt remove <pkg>             # 卸载软件
+sudo apt purge <pkg>              # 彻底卸载（含配置文件）
 sudo apt autoremove                # 自动清理无用的依赖包
 ```
 
@@ -171,15 +171,15 @@ sudo apt autoremove                # 自动清理无用的依赖包
 ## 十、权限相关
 
 ```bash
-sudo <命令>                        # superuser do — 以 root 权限执行
+sudo <command>                        # superuser do — 以 root 权限执行
 sudo -i                            # 切换到 root 用户
 
 # 修改文件权限
-chmod +x <文件>                    # change mode — 给文件添加可执行权限
-chmod 755 <文件>                   # rwxr-xr-x 所有者可读写执行，其他人可读执行
+chmod +x <file>                    # change mode — 给文件添加可执行权限
+chmod 755 <file>                   # rwxr-xr-x 所有者可读写执行，其他人可读执行
 
 # 修改文件所有者
-sudo chown <用户>:<组> <文件>      # change owner
+sudo chown <user>:<group> <file>      # change owner
 ```
 
 ---
@@ -198,4 +198,4 @@ sudo chown <用户>:<组> <文件>      # change owner
 
 ---
 
-> 💡 **学习建议：** 不要死记硬背，在实际操作中遇到问题就用 `man <命令>` 查手册，或者 `命令 --help` 看简版帮助。用多了自然就记住了！
+> 💡 **学习建议：** 不要死记硬背，在实际操作中遇到问题就用 `man <cmd>` 查手册，或者 `<cmd> --help` 看简版帮助。用多了自然就记住了！
