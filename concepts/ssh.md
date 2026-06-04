@@ -1,7 +1,15 @@
+---
+title: SSH 端口转发（隧道）
+created: 2026-06-04
+updated: 2026-06-04
+type: concept
+tags: [ssh, linux, network, remote]
+---
+
 # SSH 端口转发（隧道）
 
 ## 场景
-远程访问服务器上的本地服务（如 Hermes Dashboard、Immich 等 Web UI），但不想对外暴露端口（`--host 0.0.0.0` 不安全）。
+远程访问服务器上的本地服务（如 Hermes Dashboard、[[frp|内网穿透]]的服务等 Web UI），但不想对外暴露端口（`--host 0.0.0.0` 不安全）。
 
 ## 原理
 在本地电脑和服务器之间建立一条加密的 SSH 通道，把服务器上的某个端口"映射"到本地端口。
