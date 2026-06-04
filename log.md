@@ -6,6 +6,7 @@
 
 ### create
 - [[ssh]] — SSH 端口转发：隧道原理、操作方法、SSH Config、常见问题排查
+- [[autossh]] — SSH 隧道自动重连神器：安装、用法、macOS 开机自启、对比普通 ssh keepalive 的区别
 
 ### restructure
 - 全库风格统一：补 emoji 标题、加 Obsidian callout、去中文序号
