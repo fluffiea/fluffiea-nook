@@ -9,7 +9,8 @@
 - [[autossh]] — SSH 隧道自动重连神器：安装、用法、macOS 开机自启、对比普通 ssh keepalive 的区别
 
 ### restructure
-- 全库风格统一：补 emoji 标题、加 Obsidian callout、去中文序号
+- [[autossh]] — 统一风格：H1 加 emoji `🔄`、精简结构、对齐 ssh/frp 行文风格
+- SCHEMA.md — 新增「风格规范」章节，统一定义 H1 emoji、二级标题 emoji 对照表、表格/callout/代码块/正文风格规范
 - [[CPU-架构对比]] — 加 emoji 小节标题、加 callout、代码块加语言标签
 - [[Ubuntu-安装指南]] — 二级标题去掉中文数字序号（一、二、三…十）
 - [[nvm]] — 加设置默认版本的 tip callout
