@@ -70,9 +70,9 @@ webServer.password = "your_password"
 跑在内网机器上，连接公网服务器的 frps：
 
 ```toml
-serverAddr = "111.231.71.17"     # 公网服务器 IP
-serverPort = 7000                # 跟 frps 的 bindPort 一致
-auth.token = "your_token_here"   # 跟 frps 的 token 一致
+serverAddr = "111.231.71.17"      # 公网服务器 IP
+serverPort = 7000                 # 跟 frps 的 bindPort 一致
+auth.token = "your_token_here"    # 跟 frps 的 token 一致
 
 # 穿透 SSH — 外网连 10000 端口 = 连内网机器的 22 端口
 [[proxies]]
@@ -134,10 +134,10 @@ sudo systemctl enable --now frpc
 管理命令：
 
 ```bash
-sudo systemctl status frpc    # 查看状态
-sudo systemctl restart frpc   # 重启（改配置后用）
-sudo systemctl stop frpc      # 停止
-sudo systemctl disable frpc   # 取消开机自启
+sudo systemctl status frpc     # 查看状态
+sudo systemctl restart frpc    # 重启（改配置后用）
+sudo systemctl stop frpc       # 停止
+sudo systemctl disable frpc    # 取消开机自启
 ```
 
 ## 端口冲突处理
