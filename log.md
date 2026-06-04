@@ -10,7 +10,10 @@
 
 ### restructure
 - [[autossh]] — 统一风格：H1 加 emoji `🔄`、精简结构、对齐 ssh/frp 行文风格
-- SCHEMA.md — 新增「风格规范」章节，统一定义 H1 emoji、二级标题 emoji 对照表、表格/callout/代码块/正文风格规范
+- [[frp]] — 9 个 H2 全部补 emoji（🔍📥📤⚙️⚙️🚀🔧☁️✅）
+- [[ssh]] — `## 概述` → `## 🔍 概述`
+- [[autossh]] — `## 适用场景` → `## 🎯 适用场景`
+- SCHEMA.md — H2 风格规范对齐 skill：**所有二级标题必须加 emoji**，新增完整 emoji 对照表
 - [[CPU-架构对比]] — 加 emoji 小节标题、加 callout、代码块加语言标签
 - [[Ubuntu-安装指南]] — 二级标题去掉中文数字序号（一、二、三…十）
 - [[nvm]] — 加设置默认版本的 tip callout

@@ -12,7 +12,7 @@ tags: [ssh, tunnel, networking, mac, linux]
 
 关联笔记：[[ssh]]
 
-## 适用场景
+## 🎯 适用场景
 
 - 挂 VPN / 代理时 SSH 频繁断连
 - 需要长期保持端口转发（如本地 9119 口连远程 Kanban）

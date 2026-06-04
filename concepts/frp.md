@@ -8,13 +8,13 @@ tags: [frp, network, tunnel]
 
 # 🔧 frp — 内网穿透工具
 
-## 概述
+## 🔍 概述
 
 frp（Fast Reverse Proxy）是一个用 Go 编写的内网穿透工具，将内网服务通过一台公网服务器暴露到外网。
 
 **架构：** `frps`（服务端，公网服务器）← `frpc`（客户端，内网机器）
 
-## 下载选型
+## 📥 下载选型
 
 > [!warning] 下载选型
 > 下载时**务必**选择对应操作系统的版本，否则无法执行。
@@ -27,7 +27,7 @@ frp（Fast Reverse Proxy）是一个用 Go 编写的内网穿透工具，将内�
 > [!tip] 相关文档
 > [[CPU-架构对比]] 中解释了 amd64 和 arm64 的区别。
 
-## 文件传输（Windows → Linux）
+## 📤 文件传输（Windows → Linux）
 
 ```powershell
 # ❌ 不能直接传到 /opt/（权限不够）
@@ -43,7 +43,7 @@ sudo mv ~/frp_0.x.x_linux_amd64 /opt/frp/
 > [!warning] 踩坑提醒
 > 如果下载了 `darwin_amd64` 版本传到 Linux 上会报 `Exec format error`。
 
-## 服务端配置（frps.toml）
+## ⚙️ 服务端配置（frps.toml）
 
 跑在公网服务器上（如腾讯云）：
 
@@ -65,7 +65,7 @@ webServer.password = "your_password"
 ./frps -c frps.toml
 ```
 
-## 客户端配置（frpc.toml）
+## ⚙️ 客户端配置（frpc.toml）
 
 跑在内网机器上，连接公网服务器的 frps：
 
@@ -91,7 +91,7 @@ localPort = 2283
 remotePort = 10001
 ```
 
-## 运行方式
+## 🚀 运行方式
 
 ### 临时运行
 
@@ -140,7 +140,7 @@ sudo systemctl stop frpc       # 停止
 sudo systemctl disable frpc    # 取消开机自启
 ```
 
-## 端口冲突处理
+## 🔧 端口冲突处理
 
 如果 frpc 报 `port already used`：
 
@@ -153,14 +153,14 @@ nohup /path/to/frps -c /path/to/frps.toml > /dev/null 2>&1 &
 # 然后重新启动本机的 frpc
 ```
 
-## 云服务器安全组
+## ☁️ 云服务器安全组
 
 腾讯云/阿里云/AWS 等云厂商除了服务器本身的防火墙，还有一层**安全组**。需要添加入站规则：
 
 - **7000/tcp** — frp 控制连接
 - **每个 remotePort**（如 10000、10001）— 穿透出去的端口都要放行
 
-## 验证是否连通
+## ✅ 验证是否连通
 
 ```bash
 # 从任意机器测试
