@@ -3,7 +3,7 @@ title: Git 提交规范配置指南
 created: 2025-06-03
 updated: 2025-06-03
 type: concept
-tags: [git, commit-lint, git-hooks]
+tags: [git, commitlint, git-hooks]
 ---
 
 # 🔧 Git 提交规范配置指南

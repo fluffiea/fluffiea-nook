@@ -3,7 +3,7 @@ title: frp — 内网穿透工具
 created: 2026-06-03
 updated: 2026-06-04
 type: concept
-tags: [frp, network, tunnel, linux]
+tags: [frp, network, tunnel]
 ---
 
 # 🔧 frp — 内网穿透工具
