@@ -23,3 +23,6 @@ npm install --save-dev lint-staged
 ```bash
 pnpm add --dev lint-staged
 ```
+
+> [!tip] 配合 husky 使用
+> 在 `package.json` 中配置 `lint-staged`，然后在 [[husky]] 的 `pre-commit` 钩子中调用 `npx lint-staged`，就能实现提交前自动检查暂存区代码。

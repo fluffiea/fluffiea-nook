@@ -35,3 +35,6 @@ nvm use <version>              # 在当前终端使用指定版本
 nvm alias default <version>    # 设置默认 node 版本
 nvm current                    # 查看当前使用的 node 版本
 ```
+
+> [!tip] 设置默认版本
+> 装完 node 后记得 `nvm alias default <version>`，否则新开终端又会回到没装的状态。

@@ -7,6 +7,13 @@
 ### create
 - [[ssh]] — SSH 端口转发：隧道原理、操作方法、SSH Config、常见问题排查
 
+### restructure
+- 全库风格统一：补 emoji 标题、加 Obsidian callout、去中文序号
+- [[CPU-架构对比]] — 加 emoji 小节标题、加 callout、代码块加语言标签
+- [[Ubuntu-安装指南]] — 二级标题去掉中文数字序号（一、二、三…十）
+- [[nvm]] — 加设置默认版本的 tip callout
+- [[lint-staged]] — 加配合 husky 的 tip callout
+
 ## 2026-06-03
 
 ### create
