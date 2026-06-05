@@ -2,6 +2,11 @@
 
 > 按时间顺序记录所有 Wiki 操作。仅追加。
 
+## 2026-06-05
+
+### restructure
+- [[ssh]] — 补充 `Host *` 通配符解释、多主机配置示例（fufu/dashboard）
+
 ## 2026-06-04
 
 ### restructure

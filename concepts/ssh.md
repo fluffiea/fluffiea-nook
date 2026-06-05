@@ -159,6 +159,47 @@ Host *
     ServerAliveCountMax 3
 ```
 
+## 🌐 Host * 通配符
+
+`Host *` 匹配所有 SSH 连接，后面的参数变成全局默认值。
+
+```ini
+Host *                             # 所有连接都适用
+    ServerAliveInterval 30         # 每30秒发一次心跳
+    ServerAliveCountMax 3          # 收不到3次心跳就断开
+```
+
+如果某个特定主机也写了同样的字段（比如 `Host fufu` 里也写 `ServerAliveInterval 30`），是多写但没坏处——`Host *` 已经覆盖了所有连接，子主机的重复字段效果一样。
+
+### 多主机配置示例
+
+```ini
+Host git.yottabyte.cn
+    HostName git.yottabyte.cn
+    Port 29418
+    User qin.xiaolong
+    HostKeyAlgorithms +ssh-rsa
+    PubkeyAcceptedKeyTypes +ssh-rsa
+
+Host *
+    ServerAliveInterval 30
+    ServerAliveCountMax 3
+
+Host fufu
+    HostName 66.154.100.245
+    User fluffiea
+
+Host dashboard
+    HostName 66.154.100.245
+    User fluffiea
+    LocalForward 9119 localhost:9119
+```
+
+| 命令 | 效果 |
+|:----|:-----|
+| `ssh fufu` | 登录到 nest，可在终端里跑 `hermes` 聊天 |
+| `ssh dashboard` | 登录 + 自动打通 9119 隧道，浏览器开 `http://localhost:9119` |
+
 ### -L 0.0.0.0:9119:localhost:9119 是什么？
 
 让局域网其他设备也能通过你 Mac 的 IP 访问隧道。注意安全风险。
