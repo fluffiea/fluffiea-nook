@@ -3,10 +3,10 @@ import { tabsMarkdownPlugin } from 'vitepress-plugin-tabs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: '/fluffiea-nook/',
+  base: '/nook/',
   title: "Fluffiea Nook",
   description: "A nook for Fluffiea",
-  head: [['link', { rel: 'icon', href: '/fluffiea-nook/logo.svg' }]],
+  head: [['link', { rel: 'icon', href: '/nook/logo.svg' }]],
   themeConfig: {
     // 网站 Logo
     logo: '/logo.svg',

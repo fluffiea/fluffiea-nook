@@ -1,7 +1,7 @@
 # Git 提交规范配置指南
 > Commitizen + Commitlint + Husky 一站式实现
 
-## 创建项目
+## 🆕 创建项目
 ```bash
 # 创建项目目录
 mkdir project-name
@@ -13,7 +13,7 @@ git init
 npm init
 ```
 
-## 安装依赖
+## 📥 安装依赖
 
 :::tabs
 
@@ -29,7 +29,7 @@ pnpm add --save-dev commitizen cz-conventional-changelog @commitlint/cli @commit
 :::
 
 
-## 在 package.json 中添加配置
+## ⚙️ 在 package.json 中添加配置
 ```json
 {
   // 添加脚本
@@ -47,15 +47,15 @@ pnpm add --save-dev commitizen cz-conventional-changelog @commitlint/cli @commit
 }
 ```
 
-## 初始化 Husky
+## ⚙️ 初始化 Husky
 ```bash
 npm husky init
 ```
 
-## 删除默认的 pre-commit
+## 🗑️ 删除默认的 pre-commit
 文件路径：`.husky/pre-commit`
 
-## 创建 commit-msg
+## ⚙️ 创建 commit-msg
 创建文件：`.husky/commit-msg`
 
 文件内容：
@@ -66,7 +66,7 @@ npx commitlint --edit $1
 
 如果该文件权限不够，需要为其添加可执行权限
 
-## 创建 commitlint 配置
+## ⚙️ 创建 commitlint 配置
 创建文件：`commitlint.config.js`
 
 文件内容：
@@ -102,14 +102,14 @@ export default {
 :::
 
 
-## 替换 git 提交 commit
+## 🔄 替换 git 提交 commit
 
 - 不规范的提交会失败
 - `npm run commit` 可以使用交互式提交
 - `npm run cm` 可以执行 `git add .` 和 `npm run commit` 两个命令
 
 
-## commitizen 关键词使用场景
+## ✨ commitizen 关键词使用场景
 
 ### **核心关键词**：
 
