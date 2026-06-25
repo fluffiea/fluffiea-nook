@@ -12,7 +12,7 @@ hero:
       link: /description
     - theme: alt
       text: Notes
-      link: /notes/git-commit-lint
+      link: /1000-零碎/
 
 # features:
 #   - title: Feature A
